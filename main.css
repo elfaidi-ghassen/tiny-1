@@ -1,0 +1,67 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+:root {
+  --bc-img-pos: 0%;
+}
+
+
+input, textarea, button, select {
+  font: inherit;
+}
+
+body {
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #141414;
+  overflow: hidden;
+
+}
+
+body::after {
+  transition: 1.2s;
+  content: "";
+  background-image: url(images/gris-7.jpg);
+  width: 150%;
+  height: 150%;
+  z-index: -1;
+  filter: blur(50px) brightness(20%);
+  transform: translateX(var(--bc-img-pos));
+  position: absolute;
+  top: 0;
+  left: 0;
+
+}
+
+.images-container img {
+  width: 40vmin;
+  height: 56vmin;
+  object-fit: cover;
+  object-position: 100% 50%;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  border-radius: 8px;
+  will-change: transform, opacity;
+}
+
+.images-container {
+  -webkit-user-drag: none;
+
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  display: flex;
+  justify-content: space-between;
+  gap: 4vmin;
+  position: absolute;
+  top: 50%;
+  transform: translate(0%, -50%);
+  left: 50%;
+}
